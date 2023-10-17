@@ -40,9 +40,9 @@ function Search({ Data }) {
 
   const HandleResetButton = () => {
     setSearchAgeValue("");
-    setSearchCityValue();
+
     setSearchNameValue("");
-    setSearchOccupationValue();
+
     setSearchedNameResult([]);
   };
   return (

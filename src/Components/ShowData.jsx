@@ -12,7 +12,7 @@ function ShowData({ Data }) {
           <br />
         </div>
         {Data.map((user) => (
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 text-white">
             <p>{user.name}</p>
             <p>{user.age}</p>
             <p>{user.city}</p>
