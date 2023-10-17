@@ -37,23 +37,39 @@ function Search({ Data }) {
   const HandleCitySelect = (e) => {
     setSearchCityValue(e.target.value);
   };
+
+  const HandleResetButton = () => {
+    setSearchAgeValue("");
+    setSearchCityValue();
+    setSearchNameValue("");
+    setSearchOccupationValue();
+    setSearchedNameResult([]);
+  };
   return (
     <div>
       <div className="flex space-x-4 text-teal-950 justify-center p-10">
-        <input placeholder="Enter Name..." onChange={HandleNameInputChange} />
-        <input placeholder="Enter Age..." onChange={HandleAgeInputChange} />
-        <div>
-          <select onClick={HandleOccupationSelect} className="text-teal-950">
-            {Data.map((user) => (
-              <option value={user.occupation}>{user.occupation}</option>
-            ))}
-            <br />
-          </select>
-        </div>
+        <input
+          placeholder="Enter Name..."
+          value={SearchNameValue}
+          onChange={HandleNameInputChange}
+        />
+        <input
+          placeholder="Enter Age..."
+          value={SearchAgeValue}
+          onChange={HandleAgeInputChange}
+        />
         <div>
           <select onClick={HandleCitySelect} className="text-teal-950">
             {Data.map((user) => (
               <option value={user.city}>{user.city}</option>
+            ))}
+            <br />
+          </select>
+        </div>{" "}
+        <div>
+          <select onClick={HandleOccupationSelect} className="text-teal-950">
+            {Data.map((user) => (
+              <option value={user.occupation}>{user.occupation}</option>
             ))}
             <br />
           </select>
@@ -64,6 +80,12 @@ function Search({ Data }) {
             onClick={HandleSearchButton}
           >
             Search
+          </button>
+          <button
+            className="bg-teal-600 text-white px-4 rounded-xl"
+            onClick={HandleResetButton}
+          >
+            Reset
           </button>
         </div>
       </div>
