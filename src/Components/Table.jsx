@@ -8,6 +8,9 @@ function Table() {
   return (
     <div>
       <Search Data={Data} />
+      <h1 className="text-center p-8 text-white font-bold text-5xl">
+        ALL DATA
+      </h1>
       <ShowData Data={Data} />
     </div>
   );
